@@ -10,6 +10,12 @@ public class Rectangle {
     }
 
     public int area(){
-        return -1;
+        int area = length*width;
+
+        if (area < 0){
+            return -1;
+        }
+
+        return area;
     }
 }
