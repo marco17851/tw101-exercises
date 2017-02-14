@@ -1,0 +1,47 @@
+package com.thoughtworks.tw101.exercises.exercise9;
+
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * Created by Marco on 2/14/2017.
+ */
+public class NodeTest {
+    @Test
+    public void addLeftNode() throws Exception {
+        Node root = new Node("Cecil");
+        root.add("Bill");
+
+        assertEquals("Bill", root.getLeft().getName());
+    }
+
+    @Test
+    public void addRightNode() throws Exception {
+        Node root = new Node("Cecil");
+        root.add("Tess");
+
+        assertEquals("Tess", root.getRight().getName());
+    }
+
+    @Test
+    public void getNames() throws Exception {
+        Node root = new Node("Cecil");
+        root.add("Bill");
+        root.add("Tess");
+        root.add("Casey");
+
+        List<String> correctOrder = new ArrayList<>();
+        correctOrder.add("Bill");
+        correctOrder.add("Casey");
+        correctOrder.add("Cecil");
+        correctOrder.add("Tess");
+
+        List<String> names = root.names();
+        assertEquals(names, correctOrder);
+    }
+
+}
