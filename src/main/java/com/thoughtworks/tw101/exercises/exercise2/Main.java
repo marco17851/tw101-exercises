@@ -12,7 +12,7 @@ public class Main {
             accumulator.increment();
         }
 
-        System.out.println(accumulator.total());
+        accumulator.total();
 
     }
 }

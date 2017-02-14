@@ -2,7 +2,10 @@ package com.thoughtworks.tw101.exercises.exercise2;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.io.PrintStream;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by Marco on 2/10/2017.
@@ -10,26 +13,41 @@ import static org.junit.Assert.*;
 public class AccumulatorTest {
     @Test
     public void totalIsZero() throws Exception {
+        PrintStream out = mock(PrintStream.class);
+        System.setOut(out);
+
         Accumulator accumulator = new Accumulator();
-        assertEquals(0, accumulator.total());
+        accumulator.total();
+
+        verify(out).println(0);
     }
 
     @Test
     public void totalIsOne() throws Exception {
+        PrintStream out = mock(PrintStream.class);
+        System.setOut(out);
+
         Accumulator accumulator = new Accumulator();
         accumulator.increment();
-        assertEquals(1, accumulator.total());
+        accumulator.total();
+
+        verify(out).println(1);
     }
 
     @Test
     public void totalIsFive() throws Exception {
+        PrintStream out = mock(PrintStream.class);
+        System.setOut(out);
+
         Accumulator accumulator = new Accumulator();
 
         for (int x = 0; x < 5; x++){
             accumulator.increment();
         }
 
-        assertEquals(5, accumulator.total());
+        accumulator.total();
+
+        verify(out).println(5);
     }
 
 }

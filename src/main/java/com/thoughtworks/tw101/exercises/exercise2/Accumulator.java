@@ -12,7 +12,7 @@ public class Accumulator {
         total += 1;
     }
 
-    public int total(){
-        return total;
+    public void total(){
+        System.out.println(total);
     }
 }
