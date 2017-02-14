@@ -6,6 +6,7 @@ package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Main {
     public static void main(String[] args) {
-
+        GuessTheNumberV2 game = new GuessTheNumberV2(1, 100);
+        game.play();
     }
 }
