@@ -13,7 +13,19 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
+        int middle = n-1;
 
+        for (int row = 0; row < n; row++){
+            int beginSpace = row;
+            for (int col = 0; col <= row*2; col++){
+                for(; beginSpace < middle - col; beginSpace++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
 //    Diamond
@@ -24,7 +36,32 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        int middle = n-1;
 
+        for (int row = 0; row < n; row++){
+            int beginSpace = row;
+
+            for (int col = 0; col <= row*2; col++){
+                for(; beginSpace < middle - col; beginSpace++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int row = n-1; row > 0; row--){
+            int beginSpace = row;
+
+            for (int col = 0; col < row*2-1; col++){
+                for(; beginSpace <= middle - col; beginSpace++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
     }
 
 //    Diamond with Name
@@ -36,6 +73,34 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        int middle = n-1;
 
+        for (int row = 0; row < n-1; row++){
+            int beginSpace = row;
+
+            for (int col = 0; col <= row*2; col++){
+                for(; beginSpace < middle - col; beginSpace++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Marco");
+
+        for (int row = n-1; row > 0; row--){
+            int beginSpace = row;
+
+            for (int col = 0; col < row*2-1; col++){
+                for(; beginSpace <= middle - col; beginSpace++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
     }
 }

@@ -1,5 +1,6 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,9 +12,15 @@ import static org.junit.Assert.assertEquals;
  * Created by Marco on 2/14/2017.
  */
 public class NodeTest {
+    private Node root;
+
+    @Before
+    public void setUp() throws Exception {
+        root = new Node("Cecil");
+    }
+
     @Test
     public void addLeftNode() throws Exception {
-        Node root = new Node("Cecil");
         root.add("Bill");
 
         assertEquals("Bill", root.getLeft().getName());
@@ -21,7 +28,7 @@ public class NodeTest {
 
     @Test
     public void addRightNode() throws Exception {
-        Node root = new Node("Cecil");
+        root = new Node("Cecil");
         root.add("Tess");
 
         assertEquals("Tess", root.getRight().getName());
@@ -29,7 +36,7 @@ public class NodeTest {
 
     @Test
     public void getNames() throws Exception {
-        Node root = new Node("Cecil");
+        root = new Node("Cecil");
         root.add("Bill");
         root.add("Tess");
         root.add("Casey");
