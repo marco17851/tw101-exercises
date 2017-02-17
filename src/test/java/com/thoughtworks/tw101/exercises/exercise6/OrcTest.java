@@ -13,7 +13,7 @@ import static org.mockito.Mockito.verify;
  */
 public class OrcTest {
     @Test
-    public void takeDamage() throws Exception {
+    public void orcShouldTakeDamage() throws Exception {
         Orc orc = mock(Orc.class);
         int damage = 10;
         orc.takeDamage(damage);
@@ -21,7 +21,7 @@ public class OrcTest {
     }
 
     @Test
-    public void reportStatus() throws Exception {
+    public void orcShouldReportStatus() throws Exception {
         PrintStream out = mock(PrintStream.class);
         System.setOut(out);
 

@@ -20,14 +20,14 @@ public class NodeTest {
     }
 
     @Test
-    public void addLeftNode() throws Exception {
+    public void shouldAddLeftNode() throws Exception {
         root.add("Bill");
 
         assertEquals("Bill", root.getLeft().getName());
     }
 
     @Test
-    public void addRightNode() throws Exception {
+    public void shouldAddRightNode() throws Exception {
         root = new Node("Cecil");
         root.add("Tess");
 
@@ -35,7 +35,7 @@ public class NodeTest {
     }
 
     @Test
-    public void getNames() throws Exception {
+    public void shouldGetNodeNamesInCorrectOrder() throws Exception {
         root = new Node("Cecil");
         root.add("Bill");
         root.add("Tess");

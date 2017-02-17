@@ -1,5 +1,6 @@
 package com.thoughtworks.tw101.exercises.exercise2;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
@@ -11,23 +12,25 @@ import static org.mockito.Mockito.verify;
  * Created by Marco on 2/10/2017.
  */
 public class AccumulatorTest {
-    @Test
-    public void totalIsZero() throws Exception {
-        PrintStream out = mock(PrintStream.class);
-        System.setOut(out);
+    private PrintStream out;
+    private Accumulator accumulator;
 
-        Accumulator accumulator = new Accumulator();
+    @Before
+    public void setUp() throws Exception {
+        out = mock(PrintStream.class);
+        System.setOut(out);
+        accumulator = new Accumulator();
+    }
+
+    @Test
+    public void totalShouldBeZero() throws Exception {
         accumulator.total();
 
         verify(out).println(0);
     }
 
     @Test
-    public void totalIsOne() throws Exception {
-        PrintStream out = mock(PrintStream.class);
-        System.setOut(out);
-
-        Accumulator accumulator = new Accumulator();
+    public void totalShouldBeOne() throws Exception {
         accumulator.increment();
         accumulator.total();
 
@@ -35,12 +38,7 @@ public class AccumulatorTest {
     }
 
     @Test
-    public void totalIsFive() throws Exception {
-        PrintStream out = mock(PrintStream.class);
-        System.setOut(out);
-
-        Accumulator accumulator = new Accumulator();
-
+    public void totalShouldBeFive() throws Exception {
         for (int x = 0; x < 5; x++){
             accumulator.increment();
         }

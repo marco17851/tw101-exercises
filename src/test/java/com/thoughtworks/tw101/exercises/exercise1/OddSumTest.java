@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 public class OddSumTest {
 
     @Test
-    public void oddNumbersFrom1to10() throws Exception {
+    public void shouldPrintOddNumbersFrom1to10() throws Exception {
         PrintStream out = mock(PrintStream.class);
         System.setOut(out);
 
@@ -25,7 +25,7 @@ public class OddSumTest {
     }
 
     @Test
-    public void oddNumbersFrom1to100() throws Exception {
+    public void shouldPrintOddNumbersFrom1to100() throws Exception {
         PrintStream out = mock(PrintStream.class);
         System.setOut(out);
 
@@ -37,7 +37,7 @@ public class OddSumTest {
     }
 
     @Test
-    public void oddNumbersFrom20to81() throws Exception {
+    public void shouldPrintOddNumbersFrom20to81() throws Exception {
         PrintStream out = mock(PrintStream.class);
         System.setOut(out);
 

@@ -13,7 +13,7 @@ import static org.mockito.Mockito.verify;
  */
 public class TrollTest {
     @Test
-    public void takeDamage() throws Exception {
+    public void trollShouldTakeDamage() throws Exception {
         Troll troll = mock(Troll.class);
         int damage = 10;
         troll.takeDamage(damage);
@@ -21,7 +21,7 @@ public class TrollTest {
     }
 
     @Test
-    public void reportStatus() throws Exception {
+    public void trollShouldReportStatus() throws Exception {
         PrintStream out = mock(PrintStream.class);
         System.setOut(out);
 

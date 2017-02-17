@@ -13,35 +13,35 @@ import static org.junit.Assert.assertEquals;
  */
 public class PrimeFactorsTest {
     @Test
-    public void generatePrimeFactorsFor30() throws Exception {
+    public void shouldGeneratePrimeFactorsFor30() throws Exception {
         List<Integer> primeList = list(2, 3, 5);
 
         assertEquals(primeList, generate(30));
     }
 
     @Test
-    public void generatePrimeFactorsFor24() throws Exception {
+    public void shouldGeneratePrimeFactorsFor24() throws Exception {
         List<Integer> primeList = list(2, 2, 2, 3);
 
         assertEquals(primeList, generate(24));
     }
 
     @Test
-    public void generatePrimeFactorsFor22() throws Exception {
+    public void shouldGeneratePrimeFactorsFor22() throws Exception {
         List<Integer> primeList = list(2, 11);
 
         assertEquals(primeList, generate(22));
     }
 
     @Test
-    public void generatePrimeFactorsFor9() throws Exception {
+    public void shouldGeneratePrimeFactorsFor9() throws Exception {
         List<Integer> primeList = list(3, 3);
 
         assertEquals(primeList, generate(9));
     }
 
     @Test
-    public void generatePrimeFactorsFor5() throws Exception {
+    public void shouldGeneratePrimeFactorsFor5() throws Exception {
         List<Integer> primeList = list(5);
 
         assertEquals(primeList, generate(5));
