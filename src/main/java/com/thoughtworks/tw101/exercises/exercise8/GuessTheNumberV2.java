@@ -17,7 +17,6 @@ public class GuessTheNumberV2 implements GameInputOutput {
     public GuessTheNumberV2(int minimum, int maximum){
         MIN = minimum;
         MAX = maximum;
-
     }
 
     /**
@@ -32,6 +31,7 @@ public class GuessTheNumberV2 implements GameInputOutput {
 
         Scanner scanner = new Scanner(System.in);
 
+        // Keeps the user guessing until they get the right number
         do{
             userInput = obtainNextGuess(scanner);
             guessList.add(userInput);
@@ -61,23 +61,6 @@ public class GuessTheNumberV2 implements GameInputOutput {
     }
 
     /**
-     * Attempts to convert the user input to an integer
-     * @param userInput - user input
-     * @return the number as an integer; if invalid, returns -1
-     */
-    public int convertGuessToInteger(String userInput) {
-        int parsedInt;
-
-        try {
-            parsedInt = Integer.parseInt(userInput);
-        } catch(NumberFormatException e) {
-            parsedInt = -1;
-        }
-
-        return parsedInt;
-    }
-
-    /**
      *
      * @param userGuess - user input
      * @param correctNumber - correct number to be guessed
@@ -104,7 +87,24 @@ public class GuessTheNumberV2 implements GameInputOutput {
      * Prints out the user list of guesses
      * @param guessList
      */
-    public void printGuesses(ArrayList<String> guessList) {
+    void printGuesses(ArrayList<String> guessList) {
         System.out.println(guessList);
+    }
+
+    /**
+     * Attempts to convert the user input to an integer
+     * @param userInput - user input
+     * @return the number as an integer; if invalid, returns -1
+     */
+    int convertGuessToInteger(String userInput) {
+        int parsedInt;
+
+        try {
+            parsedInt = Integer.parseInt(userInput);
+        } catch(NumberFormatException e) {
+            parsedInt = -1;
+        }
+
+        return parsedInt;
     }
 }
